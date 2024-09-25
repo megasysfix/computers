@@ -1,5 +1,5 @@
 package com.cesar.computers.listener;
 
-public interface CartUpdateListener {
+public interface ICartUpdateListener {
     void onCartUpdated();
 }

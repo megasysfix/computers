@@ -56,6 +56,20 @@
             android:padding="16dp" />
 
         <!-- ListView -->
+        <EditText
+            android:id="@+id/movieSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+        <Button
+            android:id="@+id/searchMovies"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:text="Button" />
+
         <ListView
             android:id="@+id/listProductosDisponibles"
             android:layout_width="match_parent"

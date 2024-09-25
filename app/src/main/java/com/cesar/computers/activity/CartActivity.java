@@ -11,14 +11,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.cesar.computers.R;
 import com.cesar.computers.adapter.CartAdapter;
-import com.cesar.computers.listener.CartUpdateListener;
+import com.cesar.computers.listener.ICartUpdateListener;
 import com.cesar.computers.manager.CartManager;
-import com.cesar.computers.obj.Computer;
+import com.cesar.computers.objects.Computer;
 
 import java.util.ArrayList;
-
-// CartActivity.java
-public class CartActivity extends AppCompatActivity implements CartUpdateListener {
+public class CartActivity extends AppCompatActivity implements ICartUpdateListener {
 
     private ListView listCartItems;
     private ArrayList<Computer> cartItems;
@@ -70,7 +68,7 @@ public class CartActivity extends AppCompatActivity implements CartUpdateListene
 
     private void updateTotalPrice() {
         double totalPrice = CartManager.getInstance().getTotalPrice();
-        tvTotalPrice.setText(String.format("Total: $%.2f", totalPrice));
+        tvTotalPrice.setText(String.valueOf(totalPrice));
     }
 
     @Override

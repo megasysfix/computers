@@ -1,5 +1,6 @@
 <!-- item_computer.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -56,7 +57,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/cart_plus"
             android:contentDescription="Add to Cart"
-            android:background="?attr/selectableItemBackgroundBorderless" />
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:focusable="false" />
     </LinearLayout>
-
 </LinearLayout>

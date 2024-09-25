@@ -1,6 +1,6 @@
 package com.cesar.computers.manager;
 
-import com.cesar.computers.obj.Computer;
+import com.cesar.computers.objects.Computer;
 
 import java.util.ArrayList;
 

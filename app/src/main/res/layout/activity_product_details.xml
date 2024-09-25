@@ -1,0 +1,75 @@
+<!-- activity_product_details.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ScrollView for Main Content -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Your Cart"
+        android:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Computer Image -->
+            <ImageView
+                android:id="@+id/imgComputerDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="TODO"
+                android:scaleType="centerCrop"
+                android:src="@drawable/computerstore" />
+
+            <!-- Computer Name -->
+            <TextView
+                android:id="@+id/tvComputerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computer Name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <!-- Computer Price -->
+            <TextView
+                android:id="@+id/tvComputerPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <!-- Computer Description -->
+            <TextView
+                android:id="@+id/tvComputerDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computer Description"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Add to Cart Button -->
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart"
+                android:layout_marginTop="24dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
