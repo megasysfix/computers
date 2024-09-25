@@ -1,54 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_main.xml -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- AppBar with Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Tienda de computadores"
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+            app:navigationIcon="@drawable/computerstore" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Image Banner -->
+        <ImageView
+            android:id="@+id/imgApp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/computerstore" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <!-- Title -->
         <TextView
-            android:id="@+id/txTituloApp"
-            android:layout_width="wrap_content"
+            android:id="@+id/txListadoComputadores"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Tienda de computadores"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:text="Computadores Disponibles:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="16dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+        <!-- ListView -->
+        <ListView
+            android:id="@+id/listProductosDisponibles"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:divider="@color/gray"
+            android:dividerHeight="1dp"
+            android:padding="8dp" />
 
-        <ImageButton
-            android:id="@+id/btnCarrito"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/shopingcart" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imgApp"
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCarrito"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        tools:srcCompat="@drawable/computerstore" />
-
-    <TextView
-        android:id="@+id/txListadoComputadores"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Computadores Disponibles:" />
+        android:contentDescription="Shopping Cart"
+        android:src="@drawable/shopingcart"
+        app:fabSize="normal"
+        app:layout_anchor="@id/main_content"
+        app:layout_anchorGravity="bottom|end"
+        android:layout_margin="16dp" />
 
-    <ListView
-        android:id="@+id/listProductosDisponibles"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

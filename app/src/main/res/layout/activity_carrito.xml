@@ -1,49 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_cart.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".carrito">
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Your Cart"
+        android:titleTextColor="@android:color/white" />
 
-        <TextView
-            android:id="@+id/txTituloCarrito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Carrito de Compras"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
+    <!-- Cart Items ListView -->
+    <ListView
+        android:id="@+id/listCartItems"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp" />
 
-        <ListView
-            android:id="@+id/listItemsCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="16dp"/>
+    <!-- Total Price -->
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: $0.00"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:textAlignment="viewEnd" />
 
-        <TextView
-            android:id="@+id/txPrecioTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total: $0.00"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/btnConfirmarCompra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirmar Compra"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"/>
-    </LinearLayout>
-
+    <!-- Checkout Button -->
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checkout"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:layout_margin="16dp" />
 </LinearLayout>
